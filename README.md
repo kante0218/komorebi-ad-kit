@@ -4,10 +4,10 @@ Komorebi は仮称です。個人開発サイトに広告枠を置くための�
 
 ## 導入
 
-このフォルダは単独で配布できます。LP の SDK ZIP をダウンロードして展開し、`embed.js` を自分の静的サイトに配置できます。GitHub 公開後は「Code → Download ZIP」でも取得できます。公開先の URL はサービス側が用意した値を使ってください。以下の `https://YOUR_SERVICE.example` は置換用です。
+このフォルダは単独で配布できます。LP の SDK ZIP をダウンロードして展開し、`embed.js` を自分の静的サイトに配置できます。[GitHub リポジトリ](https://github.com/kante0218/komorebi-ad-kit) の「Code → Download ZIP」でも取得できます。公開先の URL はサービス側が用意した値を使ってください。サービスの設定先は `https://komorebi-ad-kit.kante0218.chatgpt.site` です。公開状況と接続可否は別途確認してください。
 
 ```html
-<script async src="https://YOUR_SERVICE.example/sdk/embed.js"
+<script async src="https://komorebi-ad-kit.kante0218.chatgpt.site/sdk/embed.js"
   data-slot="demo_card" data-size="card" data-demo="true"></script>
 ```
 
@@ -15,7 +15,7 @@ Komorebi は仮称です。個人開発サイトに広告枠を置くための�
 
 ```html
 <script async src="/assets/embed.js"
-  data-endpoint="https://YOUR_SERVICE.example"
+  data-endpoint="https://komorebi-ad-kit.kante0218.chatgpt.site"
   data-slot="demo_card" data-size="card" data-demo="true"></script>
 ```
 
@@ -29,7 +29,7 @@ React は `examples/AdSlot.jsx` をコピーします。props の変更とアン
 
 ```jsx
 <AdSlot slotId="demo_card" size="card"
-  endpoint="https://YOUR_SERVICE.example" embedPath="/sdk/embed.js" demo={true} />
+  endpoint="https://komorebi-ad-kit.kante0218.chatgpt.site" embedPath="/sdk/embed.js" demo={true} />
 ```
 
 ## ローカルで試す
@@ -63,3 +63,7 @@ python3 -m http.server 8080
 ## 検証とライセンス
 
 `node test/embed.test.cjs` で URL・入力検証・隔離設定・試験モードを確認できます。MIT License。ライセンス本文は `LICENSE` を参照してください。
+
+## macOS アプリ
+
+インストール後に動く macOS アプリ向けの WKWebView / Electron 例も同梱しています。DMG 自体には埋め込みません。現時点では Web デモの隔離表示のみで、ネイティブ実配信・認証は未提供です。[platforms.md](platforms.md) に導入・審査・所有確認と未検証範囲を記載しています。
